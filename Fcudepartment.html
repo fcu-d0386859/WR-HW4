@@ -1,0 +1,81 @@
+<html>
+	<body>
+		<form>
+			請選擇學院<br>
+			<select id = "college" onchange = "displaylist()">
+			</select><br>
+			選擇學院後出現對應科系<br>
+			<select id = "department">
+			</select>
+			
+			<script>
+				var colleges = ["請選擇","商學院","工學院","建設學院","金融學院","資電學院","人文社會學院","理學院"];
+				var collegeSelect = document.getElementById("college");
+				var inner;
+				
+				for(i = 0;i<colleges.length;i++){
+					inner += '<option value="'+i+'">'+colleges[i]+'</option>'
+				}
+				
+				collegeSelect.innerHTML = inner;
+				
+				function displaylist(){
+					var array0 = ["會計學系","國貿學系","國際經營與貿易學系國際企業管理全英語學士班","財稅學系","合作經濟暨社會事業經營學系","統計學系","經濟學系","企業管理學系","行銷學系","國際企業管理學士學位學程(英語專班)","商學進修學士學位學程"];
+					var array1 = ["機械與電腦輔助工程學系","纖維與複合材料學系","工業工程與系統管理學系","化學工程學系","航太與系統工程學系","精密系統設計學士學位學程"];
+					var array2 = ["土木工程學系","水利工程與資源保育學系","都市計畫與空間資訊學系","運輸與物流學系","土地管理學系"];
+					var array3 = ["風險管理與保險學系","財務金融學系","財務工程與精算學士學位學程"];
+					var array4 = ["資訊工程學系","電機工程學系","電子工程學系","自動控制工程學系","通訊工程學系","資電不分系榮譽班"];
+					var array5 = ["中國文學系","外國語文學系"];
+					var array6 = ["應用數學系","環境工程與科學學系","材料科學與工程學系","光電學系"];
+					
+					var departmentSelect = document.getElementById("department");
+					var inner1;
+					
+					if(document.getElementById("college").value == "1"){
+						for(a = 0;a<array0.length;a++){
+							inner1 += '<option value="'+a+'">'+array0[a]+'</option>'
+						}
+					}
+					
+					if(document.getElementById("college").value == "2"){
+						for(a = 0;a<array1.length;a++){
+							inner1 += '<option value="'+a+'">'+array1[a]+'</option>'
+						}
+					}
+					
+					if(document.getElementById("college").value == "3"){
+						for(a = 0;a<array2.length;a++){
+							inner1 += '<option value="'+a+'">'+array2[a]+'</option>'
+						}
+					}
+					
+					if(document.getElementById("college").value == "4"){
+						for(a = 0;a<array3.length;a++){
+							inner1 += '<option value="'+a+'">'+array3[a]+'</option>'
+						}
+					}
+					
+					if(document.getElementById("college").value == "5"){
+						for(a = 0;a<array4.length;a++){
+							inner1 += '<option value="'+a+'">'+array4[a]+'</option>'
+						}
+					}
+					
+					if(document.getElementById("college").value == "6"){
+						for(a = 0;a<array5.length;a++){
+							inner1 += '<option value="'+a+'">'+array5[a]+'</option>'
+						}
+					}
+					
+					if(document.getElementById("college").value == "7"){
+						for(a = 0;a<array6.length;a++){
+							inner1 += '<option value="'+a+'">'+array6[a]+'</option>'
+						}
+					}
+					
+					departmentSelect.innerHTML = inner1;
+				}
+			</script>
+		</form>
+	</body>
+</html>
